@@ -1,4 +1,4 @@
-﻿{{ $related := .Site.RegularPages.Related . | first .Site.Params.numberOfRelatedPosts }}
+﻿{{ $related := .Site.RegularPages.RelatedIndices . "tags"| first .Site.Params.numberOfRelatedPosts }}
 {{ with $related }}
   <h3>Related Posts</h3>
   <ul>
