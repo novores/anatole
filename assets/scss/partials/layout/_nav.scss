@@ -1,5 +1,5 @@
 .nav {
-  $py-desktop: 24px;
+  $py-desktop: 20px;
 
   display: none;
 
@@ -58,11 +58,11 @@
 
   &__link {
     &--active {
-      padding-bottom: $py-desktop;
+      padding-bottom: $py-desktop - 2px;
 
       @include desktop {
         @include themed() {
-          border-bottom: 1px solid t('primary');
+          border-bottom: 3px solid t('primary-light');
         }
       }
     }
