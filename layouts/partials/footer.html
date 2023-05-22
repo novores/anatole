@@ -1,10 +1,13 @@
 <footer class="footer footer__{{ .footerClassModifier }}">
   <ul class="footer__list">
     <li class="footer__item">
-      &copy;
-      {{ if isset .context.Site.Params "copyright" }}
+      {{if eq .context.Site.Params.copyright true}}
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br /><span style="font-size:9pt">This work is licensed under a </span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><span style="font-size:9pt">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</span></a>
+      {{else if isset .context.Site.Params "copyright" }}
+        &copy;
         {{ replace .context.Site.Params.copyright "{{ YEAR }}" (now.Format "2006") | markdownify }}
       {{ else }}
+        &copy;
         {{ .context.Site.Params.author }}
         {{ now.Format "2006" }}
       {{ end }}
