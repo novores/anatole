@@ -64,23 +64,22 @@
       <!--  -->
       <div class="post__footer">
         <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >{{ if isset .Site.Params "indexdateformat" }}
-            {{ if .Site.Params.localizedDates }}
-              {{ time.Format .Site.Params.indexDateFormat .Date }}
-            {{ else }}
-              {{ .Date.Format .Site.Params.indexDateFormat }}
-            {{ end }}
-
-          {{ else }}
-            {{ if .Site.Params.localizedDates }}
-              {{ time.Format "Mon, Jan 2, 2006" .Date }}
-            {{ else }}
-              {{ .Date.Format "Mon, Jan 2, 2006" }}
-            {{ end }}
-
-          {{ end }}</span
-        >
+        <span class="post__footer-date" >
+              {{- $pubdate := .PublishDate.Format "02/01/2006" }}
+              <time datetime="{{ .PublishDate }}" title="{{ .PublishDate }}">
+                  {{ $pubdate }}
+              </time>
+        <span style="margin-left:5px;margin-right:5px">
+            {{- if .Lastmod }}
+              {{- $lastmod := .Lastmod.Format "02/01/2006" }}
+              {{- if ne $lastmod $pubdate}}
+        <em style="background:#ebdbb2;color:#1d2023;padding-left:12px;padding-right:12px">last edited
+              <time datetime="{{ .Lastmod }}" title="{{ .Lastmod }}">
+        {{ $lastmod }}</em>
+      </time>
+      {{ end }}
+      {{ end }}
+          </span >
         {{ with .Page.Params.Categories }}
           {{ partial "taxonomy/categories.html" . }}
         {{ end }}
