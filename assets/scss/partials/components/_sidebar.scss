@@ -61,10 +61,10 @@
 
     &-title {
       font-weight: bold;
-      background:t('primary-lighter'); 
-      display: inline-block;
-      padding-top: 10px;
-      padding-left: 15px;
+      border:solid 5px; 
+      display: block;
+      position: sticky;
+      padding:10px;
       letter-spacing: 0px;
       text-transform: uppercase;
       line-height: 1;
