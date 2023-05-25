@@ -57,13 +57,14 @@
       width: 127px;
       height: 127px;
       border-radius: 50%;
+      display: inline-block;
+      position: fix;
     }
 
     &-title {
       font-weight: bold;
       border:solid 5px; 
-      display: block;
-      position: sticky;
+      display: inline-block;
       padding:10px;
       letter-spacing: 0px;
       text-transform: uppercase;
