@@ -202,6 +202,13 @@
     {{- partial "analytics/umami" . -}}
   {{ end }}
 
+<script src="https://tfpb.techforpalestine.org/lib/banner.min.js"></script>
+  <script>
+    TFPBanner.create({
+      theme: "auto",
+      fixed: false,
+    });
+  </script>
 
   <!-- Twitter Cards -->
   {{ template "_internal/twitter_cards.html" . }}
@@ -213,4 +220,6 @@
 
   <!-- Schema.org-->
   {{ partial "schema.html" . }}
+
+  
 </head>
